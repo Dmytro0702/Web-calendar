@@ -1,0 +1,173 @@
+@use '@shared/styles/variables' as *;
+
+.form {
+  width: 522px;          // ширина модалки по макету
+  min-height: 446px;
+  padding: 24px 33px 20px; // 456px внутренняя ширина контента
+  display: flex;
+  flex-direction: column;
+}
+
+/* общий блок строки с нижним бордером */
+.section {
+  padding: 8px 0 12px;
+  border-bottom: 1px solid $color-border;
+}
+
+/* строка Date/Time: две колонки */
+.sectionRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* строка All day + Repeat */
+.sectionAllDay {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 40px;
+  align-items: center;
+}
+
+.allDayLeft {
+  display: flex;
+  align-items: center;
+}
+
+.allDayRight {
+  display: flex;
+}
+
+/* ===== CALENDAR: label слева, селект справа в одной строке ===== */
+
+.sectionCalendar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.sectionCalendar .label {
+  margin-bottom: 0; // label по центру строки, без отступа вниз
+}
+
+/* контейнер селекта Calendar — выравниваем вправо, ограничиваем максимум */
+.calendarSelectControl {
+  justify-self: end;
+  width: 100%;
+  max-width: 456px;
+}
+
+/* подписи полей */
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: $color-text;
+  margin-bottom: 4px;
+}
+
+/* базовый вид "линейного" инпута по макету */
+.textInput,
+.dateControl,
+.timeControl,
+.selectControl,
+.descriptionControl {
+  width: 100%;
+  border: none !important;     // убираем прямоугольные бордеры с контейнеров
+  background: transparent;
+  padding: 4px 0 6px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* убираем стандартные outline, чтобы не ломать линию;
+   фокус/ховер обрабатываются в самом UI-kit */
+.textInput:focus-visible,
+.dateControl:focus-visible,
+.timeControl:focus-visible,
+.selectControl:focus-visible,
+.descriptionControl:focus-visible {
+  outline: none;
+}
+
+/* TITLE / DESCRIPTION — просто текстовая линия */
+.textInput {
+}
+
+/* DATE */
+.dateControl {
+  cursor: pointer;
+}
+
+/* TIME */
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.timeControl {
+  cursor: pointer;
+  width: 88px; // ширина time-контрола по макету (88x40)
+}
+
+.timeDash {
+  font-size: 13px;
+  color: $color-text-muted;
+}
+
+/* чекбокс All day по одной линии с текстом */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* DESCRIPTION — одна линия + многострочный ввод */
+.descriptionControl {
+  resize: none;
+}
+
+/* КНОПКИ ВНИЗУ */
+
+.footer {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.secondary {
+  height: 36px;
+  min-width: 80px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid $color-border;
+  background: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.primary {
+  height: 36px;
+  min-width: 80px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: none;
+  background: $color-primary;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}

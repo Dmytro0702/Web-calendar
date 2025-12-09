@@ -1,0 +1,81 @@
+@use '@shared/styles/variables' as *;
+
+.form {
+  width: 294px;               // как в Figma
+  min-height: 300px;
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                   // label → control (+ внутренняя ошибка RHF)
+}
+
+.label {
+  font-size: 13px;
+  color: $color-text;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+}
+
+.color {
+  width: 100%;
+}
+
+/* Если где-то нужны собственные ошибки — класс на будущее */
+.error {
+  color: $color-danger;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+}
+
+/* Кнопки внизу справа */
+.actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid $color-border;
+}
+
+.secondary {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid $color-border;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}
+
+.primary {
+  height: 32px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 6px;
+  background: $color-primary;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}

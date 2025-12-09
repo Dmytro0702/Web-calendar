@@ -1,0 +1,23 @@
+* text=auto
+*.{js,jsx,ts,tsx,css,scss,md,json,yml,yaml} text eol=lf
+.husky/* text eol=lf
+
+.prettierrc text eol=lf
+* text=auto
+
+# Всегда LF для кода
+*.js  text eol=lf
+*.ts  text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.md  text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh  text eol=lf
+
+# Windows-скрипты
+*.bat text eol=crlf
+*.ps1 text eol=crlf

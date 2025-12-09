@@ -1,0 +1,60 @@
+@use '@styles/variables.scss' as *;
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 240px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: var(--toast-contrast);
+  font-size: 14px;
+  box-shadow: var(--shadow-sm);
+  animation: slideIn 0.3s ease;
+}
+
+.message {
+  flex: 1;
+  margin-right: var(--space-8);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+}
+
+.success {
+  background-color: var(--toast-success);
+}
+.error {
+  background-color: var(--toast-error);
+}
+.info {
+  background-color: var(--toast-info);
+}
+.warning {
+  background-color: var(--toast-warning);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

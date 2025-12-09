@@ -1,0 +1,90 @@
+@use '@styles/variables.scss' as *;
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.inputField {
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: #fff;
+  color: $color-text;
+  cursor: pointer;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.calendar {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #fff;
+  color: $color-text;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  z-index: 10;
+  width: 240px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  font-weight: 600;
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 4px;
+}
+.weekday {
+  text-align: center;
+  font-weight: 600;
+  color: $color-text-muted;
+  font-size: 12px;
+}
+.day {
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+  &:hover {
+    background: rgba(0, 174, 28, 0.08);
+  }
+}
+.selected {
+  background: rgba(0, 174, 28, 0.16);
+  outline: 1px solid $color-primary;
+}

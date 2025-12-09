@@ -1,0 +1,90 @@
+
+@use '@shared/styles/variables' as *;
+
+.container {
+  width: 522px;
+  min-height: 278px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  color: $color-text-main;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.label {
+  width: 80px;
+  font-size: 13px;
+  line-height: 18px;
+  color: $color-text-secondary;
+}
+
+.value {
+  flex: 1 1 auto;
+  font-size: 13px;
+  line-height: 18px;
+  color: $color-text-main;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.secondaryButton {
+  min-width: 80px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid $color-border;
+  background-color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+  cursor: pointer;
+  color: #ef4444;
+}
+
+.primaryButton {
+  min-width: 80px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background-color: $color-primary;
+  color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-hover;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+}

@@ -1,0 +1,40 @@
+$sidebar-width: 240px;
+$header-height: 60px;
+$modal-width: 522px;
+
+// базовые цвета UI
+$color-surface: #ffffff; // фон карточек/модалок
+$color-bg: #f6f7f8; // фон страницы / грид
+$color-border: #dedfe5; // тот самый rgba(222, 223, 229, 1)
+$color-text: #323749; // rgba(50, 55, 73, 1)
+$color-text-muted: #5b5f6e; // rgba(91, 95, 110, 1)
+$color-text-subtle: #737373; // rgba(115, 115, 115, 1)
+$color-danger: #d92d20;
+
+$color-primary: #00ae1c;
+
+// палитра календарей
+$calendar-colors: (
+  #00ae1c,
+  #eec04c,
+  #80d78d,
+  #8332a4,
+  #9f2957,
+  #429488,
+  #ff5620,
+  #4254af,
+  #439bdf,
+  #6c7ac4,
+  #b8c42f,
+  #c73461,
+  #d90056,
+  #dfc45a,
+  #e25d33
+);
+$color-text-main: #32313c;       // основной текст (из макета Figma)
+$color-text-secondary: #5b5f73;  // подписи/лейблы (серый текст)
+
+// Primary brand color
+$color-primary: #00ae1c;
+// Hover-состояние кнопок (слегка темнее primary)
+$color-primary-hover: #009318;

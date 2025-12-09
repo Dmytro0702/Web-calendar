@@ -1,0 +1,85 @@
+@use '@styles/variables.scss' as *;
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  max-width: 280px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-fg);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-2px);
+  animation: tooltipFade 120ms ease-out forwards;
+}
+
+.inner {
+  display: block;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Positions */
+.top {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -6px);
+}
+.right {
+  top: 50%;
+  left: 100%;
+  transform: translate(6px, -50%);
+}
+.bottom {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 6px);
+}
+.left {
+  top: 50%;
+  right: 100%;
+  transform: translate(-6px, -50%);
+}
+
+/* Arrow */
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--tooltip-bg);
+  transform: rotate(45deg);
+}
+
+.arrow_top {
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.arrow_right {
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.arrow_bottom {
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.arrow_left {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+@keyframes tooltipFade {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

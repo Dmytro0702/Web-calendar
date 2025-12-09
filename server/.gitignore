@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+coverage
+# secrets
+*.secret.json
+*.key.json
+serviceAccount*.json
+.env

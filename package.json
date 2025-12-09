@@ -1,0 +1,46 @@
+{
+  "name": "calendar-dev",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "overrides": {
+    "sass": "npm:sass-embedded@^1.93.2"
+  },
+  "scripts": {
+    "dev": "concurrently -n client,server -c auto \"npm:dev:client\" \"npm:dev:server\"",
+    "dev:client": "npm --workspace client run dev",
+    "dev:server": "npm --workspace server run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "npm --workspace client run build",
+    "build:server": "npm --workspace server run build",
+    "start": "npm --workspace server run start",
+    "lint": "eslint \"{client/src,server/src}/**/*.{ts,tsx,js,jsx}\"",
+    "format": "prettier -w .",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "client/src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --no-error-on-unmatched-pattern --fix --max-warnings=50",
+      "prettier --write"
+    ],
+    "server/src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --no-error-on-unmatched-pattern --fix --max-warnings=50",
+      "prettier --write"
+    ],
+    "*.{css,scss,json,md}": "prettier --write"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.8.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "espree": "^10.4.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.3.3"
+  }
+}

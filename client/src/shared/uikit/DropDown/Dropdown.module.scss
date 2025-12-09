@@ -1,0 +1,98 @@
+@use '@styles/variables.scss' as *;
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+
+  width: 80px;
+  height: 36px;
+  padding: 0 var(--space-12);
+
+  background: var(--select-bg);
+  color: var(--select-text);
+  border: 1px solid var(--select-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    background: var(--color-surface-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.controlOpen {
+  background: var(--color-surface-muted);
+}
+
+.value {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.placeholder {
+  color: var(--input-placeholder);
+}
+
+.chevron {
+  transition: transform 0.15s ease;
+}
+
+.controlOpen .chevron {
+  transform: rotate(180deg);
+}
+
+/* Выпадающий список */
+.list {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: calc(100% + 4px);
+  width: 100%;
+
+  background: var(--select-bg);
+  color: var(--select-text);
+  border: 1px solid var(--select-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-8) 0;
+}
+
+/* Элемент списка */
+.option {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid transparent; /* чтобы не прыгал текст при hover */
+  }
+}
+
+.optionHover {
+  background: var(--select-item-hover);
+}
+
+.optionSelected {
+  background: var(--select-item-selected);
+  font-weight: 600;
+}

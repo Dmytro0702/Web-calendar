@@ -1,0 +1,47 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+:root {
+  --sidebar-width: #{$sidebar-width};
+  --header-height: #{$header-height};
+  --color-surface: #{$color-surface};
+  --color-bg: #{$color-bg};
+  --color-border: #{$color-border};
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-primary: #{$color-primary};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  background: $color-bg;
+  color: $color-text;
+}
+
+.app-error-boundary {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid #fecdd3;
+  background: #fff1f2;
+  border-radius: 8px;
+  color: #b91c1c;
+  white-space: pre-wrap;
+}

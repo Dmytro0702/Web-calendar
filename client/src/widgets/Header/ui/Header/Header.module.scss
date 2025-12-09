@@ -1,0 +1,123 @@
+@use '@shared/styles/variables' as *;
+
+.header {
+  height: $header-height;
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logoMark {
+  width: 28px;
+  height: 28px;
+  background: #16af6e;
+  border-radius: 8px;
+}
+.logoText {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.today {
+  height: 32px;
+  padding: 0 16px;
+  background: transparent;
+  color: $color-text;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.todayActive {
+  background: $color-primary;
+  color: #fff;
+  border-color: $color-primary;
+}
+
+.navButtons {
+  display: flex;
+  gap: 6px;
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid $color-border;
+  background: #fff;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: $color-text; // или $color-text-muted, если хочешь более мягкий цвет
+}
+
+
+.currentMonth {
+  font-weight: 500;
+  color: $color-text;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.viewSelect {
+  height: 32px;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  background: #fff;
+  padding: 0 8px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #16af6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+}
+.userName {
+  font-size: 13px;
+  color: $color-text;
+}
+.logout {
+  border: 1px solid $color-border;
+  background: #ffffff;
+  border-radius: 6px;
+  height: 30px;
+  padding: 0 12px;
+  cursor: pointer;
+}

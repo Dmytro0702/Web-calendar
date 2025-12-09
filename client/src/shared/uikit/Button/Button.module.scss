@@ -1,0 +1,87 @@
+@use '@styles/variables.scss' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    transform 0.02s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  /* primary */
+  &.primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+    &:active {
+      background-color: var(--color-primary-active);
+    }
+  }
+
+  /* secondary (outline) */
+  &.secondary {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-primary) 6%, var(--color-bg));
+    }
+    &:active {
+      background-color: color-mix(in srgb, var(--color-primary) 10%, var(--color-bg));
+    }
+  }
+
+  /* danger */
+  &.danger {
+    background-color: var(--color-error);
+    color: var(--color-error-contrast);
+
+    &:hover {
+      background-color: var(--color-error-hover);
+    }
+    &:active {
+      background-color: var(--color-error-active);
+    }
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}

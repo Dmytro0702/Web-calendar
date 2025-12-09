@@ -1,0 +1,79 @@
+@use '@styles/variables.scss' as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  user-select: none;
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.selected {
+  padding: 8px 12px;
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  background-color: #fff;
+  color: $color-text;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  white-space: nowrap; // "12:00 pm" и "Does not repeat" в одну строку
+}
+
+.placeholder {
+  color: $color-text-muted;
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-height: 180px; // высота дропдауна времени по макету
+  overflow-y: auto;
+
+  /* убираем маркеры списка */
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.option {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: $color-text;
+  cursor: pointer;
+  white-space: nowrap; // "12:15 am" не переносится
+  list-style: none;
+
+  &:hover {
+    background-color: rgba(0, 174, 28, 0.08);
+  }
+}
+
+.selectedOption {
+  background: rgba(0, 174, 28, 0.16);
+  font-weight: 600;
+}

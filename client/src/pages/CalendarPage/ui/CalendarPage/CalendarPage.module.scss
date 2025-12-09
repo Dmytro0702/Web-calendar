@@ -1,0 +1,22 @@
+@use '@shared/styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: $color-bg;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: $sidebar-width 1fr;
+  gap: 0;
+  flex: 1 1 auto;
+  min-height: 0; // чтобы работал overflow в контенте
+}
+
+.content {
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+}

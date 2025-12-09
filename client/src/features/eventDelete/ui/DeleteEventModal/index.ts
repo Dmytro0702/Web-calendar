@@ -1,0 +1,2 @@
+
+export { DeleteEventModal } from './DeleteEventModal';

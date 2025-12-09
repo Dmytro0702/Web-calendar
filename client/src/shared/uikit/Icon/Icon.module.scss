@@ -1,0 +1,54 @@
+@use '@styles/variables.scss' as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  color: currentColor;
+}
+
+.svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.size-xs .svg {
+  width: 12px;
+  height: 12px;
+}
+.size-sm .svg {
+  width: 16px;
+  height: 16px;
+}
+.size-md .svg {
+  width: 20px;
+  height: 20px;
+}
+.size-lg .svg {
+  width: 24px;
+  height: 24px;
+}
+
+.color-current {
+  color: currentColor;
+}
+.color-primary {
+  color: var(--color-primary);
+}
+.color-success {
+  color: var(--color-success);
+}
+.color-error {
+  color: var(--color-error);
+}
+.color-info {
+  color: var(--color-info);
+}
+.color-warning {
+  color: var(--color-warning);
+}
+.color-muted {
+  color: var(--color-text-muted);
+}

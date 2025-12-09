@@ -1,0 +1,24 @@
+// client/src/features/eventEdit/ui/EditEventModal/EditEventModal.module.scss
+@use '@shared/styles/variables' as *;
+
+.container {
+  width: 522px;
+  min-height: 446px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  color: $color-text-main;
+}
